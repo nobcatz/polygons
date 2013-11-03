@@ -35,25 +35,15 @@ public class Oval extends View {
 
     @Override
     protected void onDraw(Canvas canvas){
-        Paint paint2 = new Paint();
-        paint2.setColor(Color.WHITE);
-        paint2.setTextSize(10);
-        paint2.setAntiAlias(true);
-        paint.setTextAlign(Paint.Align.LEFT);
-        canvas.drawText("TEST", 0, 0, paint2);
-
         int myColor = getResources().getColor(R.color.base3);
 
         paint.setColor(myColor);
-
 
         canvas.drawOval(new RectF(0,0,canvas.getWidth(),canvas.getHeight()),this.paint);
 
         // canvas.drawCircle(200,200,100,this.paint);
         Log.e("EEEEEEIIIIIIIII", canvas.getHeight() + " HEIGHT");
         Log.e("EEEEEEIIIIIIIII", canvas.getWidth() + " WIDTH");
-
-
     }
 
     @Override
