@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -8,9 +9,46 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity$PlaceholderFragment">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_test"
+    android:layout_width="match_parent"
+        android:layout_height="120dp"
+    tools:context=".MainActivity$PlaceholderFragment">
+
+    </RelativeLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relative_layout_new_game"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        tools:context=".MainActivity$PlaceholderFragment"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <view
+            android:layout_width="300dp"
+            android:layout_height="85dp"
+            android:text="@string/new_game"
+            class="com.github.polygons.Oval"
+            android:id="@+id/view"
+            android:onClick="newGame"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/new_game"
+            android:id="@+id/textView"
+            android:textSize="40sp"
+            android:enabled="true"
+            android:editable="false"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
