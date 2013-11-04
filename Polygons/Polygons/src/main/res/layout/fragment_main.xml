@@ -30,13 +30,11 @@
         android:layout_height="0dp"
         android:background="@color/base02"
         android:layout_weight="1"
-        tools:context=".MainActivity$PlaceholderFragment"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true">
+        tools:context=".MainActivity$PlaceholderFragment">
 
         <view
-            android:layout_width="300dp"
-            android:layout_height="85dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:text="@string/new_game"
             class="com.github.polygons.Oval"
             android:id="@+id/view"
