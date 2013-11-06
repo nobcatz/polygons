@@ -16,7 +16,7 @@ import android.view.View;
  */
 public class Oval extends View {
 
-    private Paint paint=new Paint();
+    private Paint paint = new Paint();
 
     public Oval(Context context) {
         super(context);
@@ -34,12 +34,12 @@ public class Oval extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas){
+    protected void onDraw(Canvas canvas) {
         int myColor = getResources().getColor(R.color.base3);
 
         paint.setColor(myColor);
 
-        canvas.drawOval(new RectF(0,0,canvas.getWidth(),canvas.getHeight()),this.paint);
+        canvas.drawOval(new RectF(0, 0, canvas.getWidth(), canvas.getHeight()), this.paint);
 
         // canvas.drawCircle(200,200,100,this.paint);
         Log.e("EEEEEEIIIIIIIII", canvas.getHeight() + " HEIGHT");
@@ -47,7 +47,7 @@ public class Oval extends View {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event){
+    public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getX();
         int y = (int) event.getY();
 
