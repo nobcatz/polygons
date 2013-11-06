@@ -30,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+                                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
             View circle = new Circle(rootView.getContext());
@@ -67,6 +67,8 @@ public class MainActivity extends ActionBarActivity {
             circle.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    //Hay que cambiarlo porque el context sale con el fonde del color del tema en vez de negro
                     Context context = v.getContext();
                     CharSequence text = "I am dynamic";
                     int duration = Toast.LENGTH_SHORT;
@@ -78,14 +80,13 @@ public class MainActivity extends ActionBarActivity {
             );
 
             rl.addView(circle);
-
             return rootView;
         }
     }
 
-    public void newGame(View v){
+    public void newGame(View v) {
 
-        Context context = getApplicationContext();
+        Context context = v.getContext();
         CharSequence text = "I want a new game ^^";
         int duration = Toast.LENGTH_SHORT;
 

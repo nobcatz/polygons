@@ -37,27 +37,27 @@ public class Circle extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas){
+    protected void onDraw(Canvas canvas) {
         int myColor = getResources().getColor(R.color.base3);
         paint.setColor(myColor);
 
-        canvas.drawCircle(100,100,100,this.paint);
+        canvas.drawCircle(100, 100, 100, this.paint);
 
-       // canvas.drawCircle(200,200,100,this.paint);
-        Log.e("EEEEEEIIIIIIIII", canvas.getHeight()+" HEIGHT");
+        // canvas.drawCircle(200,200,100,this.paint);
+        Log.e("EEEEEEIIIIIIIII", canvas.getHeight() + " HEIGHT");
         Log.e("EEEEEEIIIIIIIII", canvas.getWidth() + " WIDTH");
     }
 
-   @Override
-    public boolean onTouchEvent(MotionEvent event){
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getX();
         int y = (int) event.getY();
 
         // ignores touches on transparent background
-       if (isPixelTransparent(x, y))
+        if (isPixelTransparent(x, y))
             return true;
-      // if(isPixelColor(x,y))
-        //   return false;
+            // if(isPixelColor(x,y))
+            //   return false;
         else
             return super.onTouchEvent(event);
     }
