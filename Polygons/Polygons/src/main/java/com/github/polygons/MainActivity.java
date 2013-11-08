@@ -1,9 +1,11 @@
 package com.github.polygons;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +19,12 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("orientation",getResources().getInteger(R.integer.orientation)+"");
+
+        setRequestedOrientation(getResources().getInteger(R.integer.orientation));
+
         setContentView(R.layout.activity_main);
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -86,7 +93,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void newGame(View v) {
 
-        Context context = v.getContext();
+        Context context = getApplicationContext();
         CharSequence text = "I want a new game ^^";
         int duration = Toast.LENGTH_SHORT;
 
