@@ -19,10 +19,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("orientation",getResources().getInteger(R.integer.orientation)+"");
 
         setRequestedOrientation(getResources().getInteger(R.integer.orientation));
-
         setContentView(R.layout.activity_main);
 
 
