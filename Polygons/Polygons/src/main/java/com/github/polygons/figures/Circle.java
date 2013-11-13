@@ -1,4 +1,4 @@
-package com.github.polygons;
+package com.github.polygons.figures;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+
+import com.github.polygons.R;
 
 /**
  * Created by Marta on 02/11/2013.
