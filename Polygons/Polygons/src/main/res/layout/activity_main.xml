@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     tools:ignore="MergeRootFrame">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/relative_layout"
@@ -25,7 +26,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             tools:context=".MainActivity$PlaceholderFragment">
-
         </RelativeLayout>
 
 
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="@string/new_game"
-                class="com.github.polygons.Oval"
+                class="com.github.polygons.figures.Oval"
                 android:id="@+id/view"
                 android:onClick="newGame"
                 android:background="@android:color/transparent"
