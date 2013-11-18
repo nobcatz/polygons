@@ -86,6 +86,16 @@ public abstract class Figure extends View{
         toast.show();
     }
 
+    public static Figure createFigure(int id, Context context){
+        switch (id){
+            case 0: return new Oval(context);
+            case 1: return new Square(context);
+            case 2: return new Triangle(context);
+        }
+        return null;
+
+    }
+
     public int getId(){
         return this.id;
     }
