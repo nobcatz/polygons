@@ -86,15 +86,6 @@ public class FigureListActivity extends Activity {
         figure = FigureGenerator.createChallengeFigure(getApplicationContext());
         figure.setVisibility(View.VISIBLE);
         figure.setLayoutParams(lp);
-        figure.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                checkFigure((Figure) v);
-            }
-        });
         ll.addView(figure);
-    }
-
-    public void checkFigure(Figure figure) {
-
     }
 }

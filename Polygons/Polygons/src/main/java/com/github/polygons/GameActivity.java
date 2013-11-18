@@ -68,8 +68,16 @@ public class GameActivity extends Activity {
         figure.setVisibility(View.VISIBLE);
         figure.setLayoutParams(lp);
             figure.setId(idfigure);
-      //  figure.setOnClickListener(
+        figure.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                checkFigure((Figure) v);
+            }
+        });
         rl.addView(figure);
+    }
+
+    public void checkFigure(Figure figure) {
+
     }
 
 }
