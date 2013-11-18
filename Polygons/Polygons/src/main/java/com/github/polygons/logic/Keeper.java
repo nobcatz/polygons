@@ -47,5 +47,9 @@ public class Keeper {
         return figuresId.isEmpty();
     }
 
+    public void resetFigures(){
+        figuresId.clear();
+    }
+
 
 }
