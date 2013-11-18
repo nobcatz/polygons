@@ -76,7 +76,7 @@ public class GameActivity extends Activity {
 
     public void newLevel() {
         Keeper.getInstance().levelUp();
-        Intent intent = new Intent(this, Level.class);
+        Intent intent = new Intent(this, FigureListActivity.class);
         startActivity(intent);
 
     }

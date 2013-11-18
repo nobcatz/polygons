@@ -15,6 +15,7 @@ import com.github.polygons.figures.Figure;
 import com.github.polygons.figures.Oval;
 import com.github.polygons.figures.Triangle;
 import com.github.polygons.logic.FigureGenerator;
+import com.github.polygons.logic.Keeper;
 
 
 /**
@@ -22,7 +23,6 @@ import com.github.polygons.logic.FigureGenerator;
  */
 public class FigureListActivity extends Activity {
 
-    private int level = 1;
     private boolean run = true;
     private int i = 0;
 
@@ -36,6 +36,7 @@ public class FigureListActivity extends Activity {
         //noinspection MagicConstant
         setRequestedOrientation(getResources().getInteger(R.integer.orientation));
         setContentView(R.layout.activity_figure_list);
+        Keeper.getInstance().resetFigures();
 
         handler.postDelayed(runnable, 1000);
     }
