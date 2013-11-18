@@ -2,6 +2,7 @@ package com.github.polygons;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,48 +14,26 @@ import android.widget.Toast;
 
 import com.github.polygons.figures.Figure;
 import com.github.polygons.logic.FigureGenerator;
+import com.github.polygons.logic.Keeper;
+
+import java.util.logging.Level;
 
 public class GameActivity extends Activity {
-
-
-    private Handler handler = new Handler();
-    private boolean run = true;
-    private int i = 15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        handler.postDelayed(runnable, 1000);
 
-
+        placeFigures();
 
     }
 
-    private Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-                /* do what you need to do */
-            if (run) {
-                placeFigures(i);
-                i--;
-                run = i >0;
-                /* and here comes the "trick" */
-                handler.postDelayed(this, 1000);
-            } else {
-                /* Create new Activity */
-                Context context = getApplicationContext();
-                CharSequence text = "NO MOAR!!";
-                int duration = Toast.LENGTH_SHORT;
-
-            }
 
 
-        }
-    };
-
-    private void placeFigures(int i){
+    private void placeFigures(){
         Resources res = getResources();
+        for(int i=1;i<16;i++){
         int idfigure = res.getIdentifier("view"+i, "id", getApplicationContext().getPackageName());
 
 
@@ -74,9 +53,31 @@ public class GameActivity extends Activity {
             }
         });
         rl.addView(figure);
+        }
     }
 
     public void checkFigure(Figure figure) {
+        if(Keeper.getInstance().isClickCorrect(figure.getId())){
+            Keeper.getInstance().removeFirstFigure();
+            figure.setVisibility(View.INVISIBLE);
+
+        }
+        else{
+            Context context = getApplicationContext();
+            CharSequence text = "YOU LOST";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+
+
+    }
+
+    public void newLevel() {
+        Keeper.getInstance().levelUp();
+        Intent intent = new Intent(this, Level.class);
+        startActivity(intent);
 
     }
 
