@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, FigureListActivity.class);
         startActivity(intent);
     }
 }
