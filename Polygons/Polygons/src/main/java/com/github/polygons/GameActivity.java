@@ -75,6 +75,15 @@ public class GameActivity extends Activity {
         figure = new Oval(getApplicationContext());
         figure.setVisibility(View.VISIBLE);
         figure.setLayoutParams(lp);
+        figure.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                checkFigure((Figure)v);
+            }
+        });
         ll.addView(figure);
+    }
+
+    public void checkFigure(Figure figure){
+
     }
 }
