@@ -83,7 +83,7 @@ public class FigureListActivity extends Activity {
         ViewGroup.LayoutParams lp = figure.getLayoutParams();
         figure.setVisibility(View.GONE);
 
-        figure = FigureGenerator.newFigure(getApplicationContext());
+        figure = FigureGenerator.createChallengeFigure(getApplicationContext());
         figure.setVisibility(View.VISIBLE);
         figure.setLayoutParams(lp);
         figure.setOnClickListener(new View.OnClickListener() {

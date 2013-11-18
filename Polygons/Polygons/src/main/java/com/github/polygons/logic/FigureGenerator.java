@@ -11,16 +11,16 @@ public class FigureGenerator {
 
     private static int figuresNum = 3;
 
-    public static Figure createChallenge(Context context){
+    public static Figure createChallengeFigure(Context context){
         int idRandom = (int)(Math.random() * figuresNum);
+
+        Keeper.getInstance().addFigureId(idRandom);
 
         return Figure.createFigure(idRandom, context);
     }
 
     public static Figure newFigure(Context context){
      int idRandom = (int)(Math.random() * figuresNum);
-
         return Figure.createFigure(idRandom, context);
-
     }
 }
