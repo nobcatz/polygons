@@ -22,14 +22,6 @@ public class MainActivity extends Activity {
 
 
     public void newGame(View v) {
-
-        Context context = getApplicationContext();
-        CharSequence text = "I want a new game ^^";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
         Intent intent = new Intent(this, FigureListActivity.class);
         startActivity(intent);
     }

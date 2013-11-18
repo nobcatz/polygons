@@ -52,13 +52,6 @@ public class FigureListActivity extends Activity {
                 handler.postDelayed(this, 1000);
             } else {
                 /* Create new Activity */
-                Context context = getApplicationContext();
-                CharSequence text = "NO MOAR!!";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
                 startGameActivity();
             }
 
