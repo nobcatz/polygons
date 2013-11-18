@@ -5,10 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.github.polygons.R;
 
@@ -76,6 +76,14 @@ public abstract class Figure extends View{
             return true;
         else
             return false;
+    }
+
+    public void toast(Context context){
+        CharSequence text = "I am a: " + id;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
     public int getId(){
