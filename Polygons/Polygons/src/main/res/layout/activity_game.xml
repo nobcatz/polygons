@@ -101,7 +101,7 @@
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
-            class="com.github.polygons.figures.Circle"
+            class="com.github.polygons.figures.Square"
             android:id="@+id/figure_1_1"
             android:onClick="prove"
             android:layout_marginBottom="3dp"
