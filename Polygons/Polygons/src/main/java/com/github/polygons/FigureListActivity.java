@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.github.polygons.figures.Figure;
 import com.github.polygons.figures.Oval;
+import com.github.polygons.figures.Triangle;
+import com.github.polygons.logic.FigureGenerator;
 
 
 /**
@@ -81,7 +83,7 @@ public class FigureListActivity extends Activity {
         ViewGroup.LayoutParams lp = figure.getLayoutParams();
         figure.setVisibility(View.GONE);
 
-        figure = new Oval(getApplicationContext());
+        figure = FigureGenerator.newFigure(getApplicationContext());
         figure.setVisibility(View.VISIBLE);
         figure.setLayoutParams(lp);
         figure.setOnClickListener(new View.OnClickListener() {
