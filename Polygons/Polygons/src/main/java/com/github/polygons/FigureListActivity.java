@@ -2,6 +2,7 @@ package com.github.polygons;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -55,11 +56,18 @@ public class FigureListActivity extends Activity {
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+
+                startGameActivity();
             }
 
 
         }
     };
+
+    private void startGameActivity() {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
 
     public void generateFigures(String layoutNum, int figureNum) {
         Resources res = getResources();
@@ -78,13 +86,13 @@ public class FigureListActivity extends Activity {
         figure.setLayoutParams(lp);
         figure.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                checkFigure((Figure)v);
+                checkFigure((Figure) v);
             }
         });
         ll.addView(figure);
     }
 
-    public void checkFigure(Figure figure){
+    public void checkFigure(Figure figure) {
 
     }
 }
