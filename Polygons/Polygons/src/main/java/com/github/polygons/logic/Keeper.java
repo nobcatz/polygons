@@ -52,4 +52,7 @@ public class Keeper {
     }
 
 
+    public int getLevel() {
+        return level;
+    }
 }
