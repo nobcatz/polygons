@@ -24,7 +24,6 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_4_1"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="3dp"
             android:layout_marginTop="5dp"
@@ -34,20 +33,20 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_4_2"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_4_3"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -64,29 +63,29 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_2_1"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_2_2"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_2_3"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone" />
 
     </LinearLayout>
 
@@ -103,7 +102,6 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_1_1"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="3dp"
             android:layout_marginTop="5dp"
@@ -115,7 +113,6 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_1_2"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
@@ -127,7 +124,6 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_1_3"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="5dp"
@@ -148,29 +144,29 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_3_1"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_3_2"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_3_3"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <LinearLayout
@@ -187,29 +183,29 @@
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_5_1"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_5_2"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <view
             android:layout_width="110dp"
             android:layout_height="110dp"
             class="com.github.polygons.figures.Square"
             android:id="@+id/figure_5_3"
-            android:onClick="prove"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
 </LinearLayout>
