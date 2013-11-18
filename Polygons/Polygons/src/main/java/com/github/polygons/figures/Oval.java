@@ -12,14 +12,17 @@ public class Oval extends Figure {
 
     public Oval(Context context) {
         super(context);
+        this.id = 0;
     }
 
     public Oval(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.id = 0;
     }
 
     public Oval(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        this.id = 0;
     }
 
     public void drawFigure(Canvas canvas) {
