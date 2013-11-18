@@ -37,8 +37,7 @@ public abstract class Figure extends View{
 
     @Override
     protected void onDraw(Canvas canvas) {
-        int myColor = getResources().getColor(R.color.base3);
-
+        int myColor = getResources().getColor(R.color.base03);
         paint.setColor(myColor);
 
         drawFigure(canvas);
