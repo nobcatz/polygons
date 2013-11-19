@@ -51,7 +51,8 @@ public class Keeper {
         figuresId.clear();
     }
 
-
+    public List<Integer> getFiguresId(){return this.figuresId;}
+    
     public int getLevel() {
         return level;
     }
