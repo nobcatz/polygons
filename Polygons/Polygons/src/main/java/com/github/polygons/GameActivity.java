@@ -58,7 +58,8 @@ public class GameActivity extends Activity {
 
     public void checkFigure(Figure figure) {
         if(Keeper.getInstance().isClickCorrect(figure.getId())){
-            Keeper.getInstance().removeFirstFigure();
+            if(Keeper.getInstance().removeFirstFigure())
+                newLevel();
             figure.setVisibility(View.INVISIBLE);
 
         }
@@ -69,6 +70,10 @@ public class GameActivity extends Activity {
 
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
         }
 
 
@@ -76,7 +81,6 @@ public class GameActivity extends Activity {
 
     public void newLevel() {
         Keeper.getInstance().levelUp();
-        Intent intent = new Intent(this, FigureListActivity.class);
         Intent intent = new Intent(this, LevelActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
