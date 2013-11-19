@@ -1,15 +1,17 @@
 package com.github.polygons;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -22,7 +24,6 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
 
 public class GameActivity extends Activity {
 
@@ -30,11 +31,10 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
         Set<Integer> ids = placeChallengeFigures();
 
         placeFigures(ids);
-
-
     }
 
 
@@ -42,7 +42,7 @@ public class GameActivity extends Activity {
         Resources res = getResources();
         for (int i = 1; i < 16; i++) {
             if (!ids.contains(i)) {
-                Log.e("pitoPrueba", "NUUUUUUU"+i);
+                Log.e("pitoPrueba", "NUUUUUUU" + i);
                 int idfigure = res.getIdentifier("view" + i, "id", getApplicationContext().getPackageName());
 
 
@@ -133,6 +133,26 @@ public class GameActivity extends Activity {
         startActivity(intent);
         this.finish();
 
+    }
+
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setPositiveButton(getResources().getString(R.string.accept), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                });
+        final FrameLayout frameView = new FrameLayout(this);
+        builder.setView(frameView);
+        final AlertDialog alertDialog = builder.create();
+        LayoutInflater inflater = alertDialog.getLayoutInflater();
+        inflater.inflate(R.layout.dialog_exitin, frameView);
+        alertDialog.show();
     }
 
 }
