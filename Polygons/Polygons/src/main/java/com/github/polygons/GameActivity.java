@@ -27,6 +27,8 @@ public class GameActivity extends Activity {
 
         placeFigures();
 
+
+
     }
 
 
@@ -73,6 +75,7 @@ public class GameActivity extends Activity {
 
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            this.finish();
 
         }
 

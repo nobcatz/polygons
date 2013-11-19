@@ -25,5 +25,6 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, LevelActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
+        this.finish();
     }
 }
