@@ -22,7 +22,8 @@ public class MainActivity extends Activity {
 
 
     public void newGame(View v) {
-        Intent intent = new Intent(this, FigureListActivity.class);
+        Intent intent = new Intent(this, LevelActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
     }
 }
