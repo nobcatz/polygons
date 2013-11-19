@@ -7,4 +7,7 @@
     <string name="new_game">New game</string>
     <string name="level">Level</string>
 
+    <string name="cancel">No</string>
+    <string name="accept">Yes</string>
+
 </resources>
