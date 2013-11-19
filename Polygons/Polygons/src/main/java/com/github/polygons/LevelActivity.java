@@ -48,7 +48,7 @@ public class LevelActivity extends Activity {
             }
         });
         TextView tv = (TextView) findViewById(R.id.logo);
-        String level = getResources().getString(R.string.level) +" " + Keeper.getInstance().getLevel();
+        String level = getResources().getString(R.string.level) +"\n" + Keeper.getInstance().getLevel();
         tv.setText(level);
         tv.clearAnimation();
         tv.startAnimation(anim);
