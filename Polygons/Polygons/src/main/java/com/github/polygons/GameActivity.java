@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -16,6 +17,11 @@ import com.github.polygons.figures.Figure;
 import com.github.polygons.logic.FigureGenerator;
 import com.github.polygons.logic.Keeper;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 
 public class GameActivity extends Activity {
@@ -24,48 +30,88 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        Set<Integer> ids = placeChallengeFigures();
 
-        placeFigures();
-
+        placeFigures(ids);
 
 
     }
 
 
-
-    private void placeFigures(){
+    private void placeFigures(Set<Integer> ids) {
         Resources res = getResources();
-        for(int i=1;i<16;i++){
-        int idfigure = res.getIdentifier("view"+i, "id", getApplicationContext().getPackageName());
+        for (int i = 1; i < 16; i++) {
+            if (!ids.contains(i)) {
+                Log.e("pitoPrueba", "NUUUUUUU"+i);
+                int idfigure = res.getIdentifier("view" + i, "id", getApplicationContext().getPackageName());
 
 
-        View figure = findViewById(idfigure);
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.relative_layout_game);
+                View figure = findViewById(idfigure);
+                RelativeLayout rl = (RelativeLayout) findViewById(R.id.relative_layout_game);
 
-        ViewGroup.LayoutParams lp = figure.getLayoutParams();
-        figure.setVisibility(View.INVISIBLE);
+                ViewGroup.LayoutParams lp = figure.getLayoutParams();
+                figure.setVisibility(View.INVISIBLE);
 
-        figure = FigureGenerator.newFigure(getApplicationContext());
-        figure.setVisibility(View.VISIBLE);
-        figure.setLayoutParams(lp);
-            figure.setId(idfigure);
-        figure.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                checkFigure((Figure) v);
+                figure = FigureGenerator.newFigure(getApplicationContext());
+                figure.setVisibility(View.VISIBLE);
+                figure.setLayoutParams(lp);
+                figure.setId(idfigure);
+                figure.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        checkFigure((Figure) v);
+                    }
+                });
+                rl.addView(figure);
             }
-        });
-        rl.addView(figure);
         }
+    }
+
+    private Set<Integer> placeChallengeFigures() {
+        Resources res = getResources();
+        List<Integer> ids = Keeper.getInstance().getFiguresId();
+        List<Figure> figures = new ArrayList<Figure>();
+
+        for (Integer id : ids) {
+            figures.add(Figure.createFigure(id, getApplicationContext()));
+        }
+        Iterator<Figure> iter = figures.iterator();
+
+        Set<Integer> generated = new LinkedHashSet<Integer>();
+        while (generated.size() < ids.size()) {
+            int i = 1 + (int) (Math.random() * (15 - 1) + 1);
+            // As we're adding to a set, this will automatically do a containment check
+            generated.add(i);
+        }
+        for (Integer id : generated) {
+            int idfigure = res.getIdentifier("view" + id, "id", getApplicationContext().getPackageName());
+
+            View figure = findViewById(idfigure);
+            RelativeLayout rl = (RelativeLayout) findViewById(R.id.relative_layout_game);
+
+            ViewGroup.LayoutParams lp = figure.getLayoutParams();
+            figure.setVisibility(View.INVISIBLE);
+
+            figure = iter.next();
+            figure.setVisibility(View.VISIBLE);
+            figure.setLayoutParams(lp);
+            figure.setId(idfigure);
+            figure.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    checkFigure((Figure) v);
+                }
+            });
+            rl.addView(figure);
+        }
+        return generated;
     }
 
     public void checkFigure(Figure figure) {
-        if(Keeper.getInstance().isClickCorrect(figure.getId())){
-            if(Keeper.getInstance().removeFirstFigure())
+        if (Keeper.getInstance().isClickCorrect(figure.getId())) {
+            if (Keeper.getInstance().removeFirstFigure())
                 newLevel();
             figure.setVisibility(View.INVISIBLE);
 
-        }
-        else{
+        } else {
             Context context = getApplicationContext();
             CharSequence text = "YOU LOST";
             int duration = Toast.LENGTH_SHORT;
@@ -78,8 +124,6 @@ public class GameActivity extends Activity {
             this.finish();
 
         }
-
-
     }
 
     public void newLevel() {
