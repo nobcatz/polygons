@@ -50,7 +50,7 @@ public class FigureListActivity extends Activity {
                 i++;
                 run = i < 3;
                 /* and here comes the "trick" */
-                handler.postDelayed(this, 1000);
+                handler.postDelayed(this, 500);
             } else {
                 /* Create new Activity */
                 startGameActivity();
