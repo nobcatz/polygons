@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.github.polygons.logic.CustomAudioManager;
+
 
 public class MainActivity extends Activity {
+    private CustomAudioManager audioManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +20,7 @@ public class MainActivity extends Activity {
         //noinspection MagicConstant
         setRequestedOrientation(getResources().getInteger(R.integer.orientation));
         setContentView(R.layout.activity_main);
+        initializeAudioManager();
 
     }
 
@@ -26,5 +30,10 @@ public class MainActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         this.finish();
+    }
+
+    private void initializeAudioManager() {
+  //      audioManager = CustomAudioManager.getInstance(this, R.raw.background_sound);
+   //     audioManager.playBackgroundMusic();
     }
 }
