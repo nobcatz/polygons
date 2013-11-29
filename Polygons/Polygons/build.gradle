@@ -14,7 +14,7 @@ repositories {
 
 android {
     compileSdkVersion 18
-    buildToolsVersion "18.1.1"
+    buildToolsVersion '18.1.1'
 
     defaultConfig {
         minSdkVersion 7
@@ -23,6 +23,6 @@ android {
 }
 
 dependencies {
-	compile 'com.android.support:appcompat-v7:+'
-    compile files('libs/libGoogleAnalyticsServices.jar')
+    compile 'com.android.support:appcompat-v7:+'
+    debugCompile files('libs/libGoogleAnalyticsServices.jar')
 }
