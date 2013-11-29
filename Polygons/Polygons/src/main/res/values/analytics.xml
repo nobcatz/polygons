@@ -9,4 +9,7 @@
 
     <!--Enable automatic exception tracking-->
     <bool name="ga_reportUncaughtExceptions">true</bool>
+
+    <!--Version of the app-->
+    <string name = "ga_appVersion">1.0</string>
 </resources>
