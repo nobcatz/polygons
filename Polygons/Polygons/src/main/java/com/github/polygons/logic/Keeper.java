@@ -26,7 +26,6 @@ public class Keeper {
         if (instance == null) {
             instance = new Keeper();
         }
-
         return instance;
     }
 

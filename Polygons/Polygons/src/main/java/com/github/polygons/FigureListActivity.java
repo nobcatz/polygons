@@ -1,7 +1,6 @@
 package com.github.polygons;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -9,11 +8,8 @@ import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.github.polygons.figures.Figure;
-import com.github.polygons.figures.Oval;
-import com.github.polygons.figures.Triangle;
 import com.github.polygons.logic.FigureGenerator;
 import com.github.polygons.logic.Keeper;
 import com.nobcatz.android.polygons.R;
