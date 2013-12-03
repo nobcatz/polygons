@@ -19,6 +19,8 @@ import com.github.polygons.figures.Figure;
 import com.github.polygons.logic.FigureGenerator;
 import com.github.polygons.logic.Keeper;
 
+import com.nobcatz.polygons.R;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
