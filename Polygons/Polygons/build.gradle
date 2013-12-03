@@ -13,16 +13,36 @@ repositories {
 }
 
 android {
+
     compileSdkVersion 18
     buildToolsVersion '18.1.1'
 
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 8
         targetSdkVersion 19
+    }
+
+    final Console console = System.console();
+    if (console != null) {
+        signingConfigs {
+            release {
+                storeFile file("release.keystore")
+                storePassword System.console().readLine("\n\$ Enter keystore password: ")
+                keyAlias "polygons"
+                keyPassword System.console().readLine("\n\$ Enter key password: ")
+            }
+        }
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
+        }
     }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:+'
-    debugCompile files('libs/libGoogleAnalyticsServices.jar')
+    compile 'com.google.android.gms:play-services:4.0.30'
+    compile files('libs/libGoogleAnalyticsServices.jar')
+    compile project(':libraries:BaseGameUtils')
 }
