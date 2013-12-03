@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- TODO: Replace this by your app's app ID! -->
+    <string name="app_id">794880286204</string>
+
+    <!-- TODO: Replace these by your achievement/leaderboard IDs! -->
+    <string name="achievement_bored1">CgkI_Lu6lJEXEAIQAg</string>
+    <string name="achievement_bored2">CgkI_Lu6lJEXEAIQAw</string>
+    <string name="achievement_bored3">CgkI_Lu6lJEXEAIQBA</string>
+    <string name="achievement_bored4">CgkI_Lu6lJEXEAIQBQ</string>
+    <string name="achievement_bored5">CgkI_Lu6lJEXEAIQBg</string>
+
+    <string name="leaderboard">CgkI_Lu6lJEXEAIQBw</string>
+</resources>
