@@ -25,7 +25,7 @@ import com.nobcatz.android.polygons.R;
 public class FigureListActivity extends Activity {
 
     private boolean run = true;
-    private int i = 0;
+    private int figNum = 0;
 
     private Handler handler = new Handler();
 
@@ -47,9 +47,9 @@ public class FigureListActivity extends Activity {
         public void run() {
                 /* do what you need to do */
             if (run) {
-                generateFigures("1", i + 1);
-                i++;
-                run = i < 3;
+                generateFigures("1", figNum + 1);
+                figNum++;
+                run = figNum < 3;
                 /* and here comes the "trick" */
                 handler.postDelayed(this, 500);
             } else {
