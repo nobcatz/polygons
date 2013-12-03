@@ -11,11 +11,13 @@ import android.widget.Toast;
 import com.github.polygons.logic.CustomAudioManager;
 
 import com.nobcatz.polygons.R;
+import com.google.example.games.basegameutils.BaseGameActivity;
+import com.nobcatz.android.polygons.R;
 
 import com.google.analytics.tracking.android.EasyTracker;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseGameActivity implements View.OnClickListener{
     private CustomAudioManager audioManager;
 
     @Override
@@ -26,6 +28,10 @@ public class MainActivity extends Activity {
         setRequestedOrientation(getResources().getInteger(R.integer.orientation));
         setContentView(R.layout.activity_main);
         initializeAudioManager();
+
+        findViewById(R.id.button_sign_in).setOnClickListener(this);
+        findViewById(R.id.button_sign_out).setOnClickListener(this);
+
 
     }
 
@@ -51,5 +57,43 @@ public class MainActivity extends Activity {
     private void initializeAudioManager() {
   //      audioManager = CustomAudioManager.getInstance(this, R.raw.background_sound);
    //     audioManager.playBackgroundMusic();
+    }
+
+    @Override
+    public void onSignInFailed() {
+        showSignInButton();
+    }
+
+    @Override
+    public void onSignInSucceeded() {
+        showSignOutButton();
+        Log.e("SIGN IN!!","WIIIIII");
+    }
+
+    private void showSignInButton() {
+        findViewById(R.id.button_sign_in).setVisibility(View.VISIBLE);
+        findViewById(R.id.button_sign_out).setVisibility(View.GONE);
+    }
+
+    private void showSignOutButton() {
+        findViewById(R.id.button_sign_in).setVisibility(View.GONE);
+        findViewById(R.id.button_sign_out).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.button_sign_in:
+                // user wants to sign in
+                beginUserInitiatedSignIn();
+                break;
+            case R.id.button_sign_out:
+                signOut();
+                break;
+
+        }
+
     }
 }

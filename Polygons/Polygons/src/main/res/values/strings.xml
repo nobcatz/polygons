@@ -9,5 +9,6 @@
 
     <string name="cancel">No</string>
     <string name="accept">Yes</string>
+    <string name="sign_out">Sign out</string>
 
 </resources>
