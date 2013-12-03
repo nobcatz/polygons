@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.nobcatz.polygons.R;
+
 public class LostActivity extends Activity {
 
     @Override

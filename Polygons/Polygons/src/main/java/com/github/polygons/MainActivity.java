@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.polygons.logic.CustomAudioManager;
+
+import com.nobcatz.polygons.R;
+
 import com.google.analytics.tracking.android.EasyTracker;
 
 
