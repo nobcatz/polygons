@@ -7,7 +7,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 
-import com.nobcatz.polygons.R;
+import com.nobcatz.android.polygons.R;
 
 /**
  * Created by Marta on 18/11/2013.
