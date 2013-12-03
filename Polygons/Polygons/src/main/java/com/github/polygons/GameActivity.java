@@ -2,7 +2,6 @@ package com.github.polygons;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -14,12 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.github.polygons.figures.Figure;
 import com.github.polygons.logic.FigureGenerator;
 import com.github.polygons.logic.Keeper;
-
 import com.nobcatz.android.polygons.R;
 
 import java.util.ArrayList;

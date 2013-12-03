@@ -1,19 +1,14 @@
 package com.github.polygons;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.github.polygons.logic.CustomAudioManager;
-
+import com.google.analytics.tracking.android.EasyTracker;
 import com.google.example.games.basegameutils.BaseGameActivity;
 import com.nobcatz.android.polygons.R;
-
-import com.google.analytics.tracking.android.EasyTracker;
 
 
 public class MainActivity extends BaseGameActivity implements View.OnClickListener{
