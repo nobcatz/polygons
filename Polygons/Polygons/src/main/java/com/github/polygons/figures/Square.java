@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 
-import com.nobcatz.polygons.R;
+import com.nobcatz.android.polygons.R;
 
 /**
  * Created by Marta on 13/11/2013.
