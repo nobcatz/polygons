@@ -13,6 +13,22 @@
         android:text="YOU LOST! :("
         android:id="@+id/textView"
         android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:id="@+id/exit"
+        android:layout_gravity="left|bottom"
+        android:onClick="exit" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retry"
+        android:id="@+id/retry"
+        android:layout_gravity="right|bottom"
+        android:onClick="retry" />
 </FrameLayout>
 
 
