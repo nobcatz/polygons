@@ -65,4 +65,7 @@ public class LevelActivity extends Activity {
         this.finish();
     }
 
+    @Override
+    public void onBackPressed() {/*Do nothing*/}
+
 }
