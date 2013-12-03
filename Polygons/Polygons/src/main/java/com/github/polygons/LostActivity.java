@@ -14,7 +14,7 @@ public class LostActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost);
-        Keeper.getInstance().lostGame();
+        Keeper.getInstance().reset();
     }
 
     @Override

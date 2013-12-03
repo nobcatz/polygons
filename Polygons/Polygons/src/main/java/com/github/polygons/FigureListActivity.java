@@ -92,7 +92,7 @@ public class FigureListActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setPositiveButton(getResources().getString(R.string.accept), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Keeper.getInstance().lostGame();
+                        Keeper.getInstance().reset();
                         Intent intent = new Intent(FigureListActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent);
@@ -101,7 +101,7 @@ public class FigureListActivity extends Activity {
                 })
                 .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        handler.post(runnable);
+                        handler.postDelayed(runnable,125);
                     }
                 });
         final FrameLayout frameView = new FrameLayout(this);
