@@ -1,12 +1,16 @@
 package com.github.polygons;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.github.polygons.figures.Figure;
@@ -80,5 +84,27 @@ public class FigureListActivity extends Activity {
         figure.setVisibility(View.VISIBLE);
         figure.setLayoutParams(lp);
         ll.addView(figure);
+    }
+
+
+    public void onBackPressed() {
+        handler.removeCallbacks(runnable);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setPositiveButton(getResources().getString(R.string.accept), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        handler.post(runnable);
+                    }
+                });
+        final FrameLayout frameView = new FrameLayout(this);
+        builder.setView(frameView);
+        final AlertDialog alertDialog = builder.create();
+        LayoutInflater inflater = alertDialog.getLayoutInflater();
+        inflater.inflate(R.layout.dialog_exitin, frameView);
+        alertDialog.show();
     }
 }
