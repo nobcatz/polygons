@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-import com.nobcatz.polygons.R;
+import com.nobcatz.android.polygons.R;
 
 /**
  * Created by Marta on 13/11/2013.

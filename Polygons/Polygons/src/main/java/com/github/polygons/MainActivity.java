@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.github.polygons.logic.CustomAudioManager;
 
-import com.nobcatz.polygons.R;
 import com.google.example.games.basegameutils.BaseGameActivity;
 import com.nobcatz.android.polygons.R;
 

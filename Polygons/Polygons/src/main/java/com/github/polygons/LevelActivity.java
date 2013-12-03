@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.github.polygons.logic.Keeper;
 
-import com.nobcatz.polygons.R;
+import com.nobcatz.android.polygons.R;
 
 public class LevelActivity extends Activity {
 

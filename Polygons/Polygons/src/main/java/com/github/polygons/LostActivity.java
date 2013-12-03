@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
-import com.nobcatz.polygons.R;
+import com.nobcatz.android.polygons.R;
 
 public class LostActivity extends Activity {
 
