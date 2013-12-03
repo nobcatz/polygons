@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -114,6 +115,7 @@ public class GameActivity extends Activity {
             figure.setVisibility(View.INVISIBLE);
 
         } else {
+            /*
             Context context = getApplicationContext();
             CharSequence text = "YOU LOST";
             int duration = Toast.LENGTH_SHORT;
@@ -123,9 +125,10 @@ public class GameActivity extends Activity {
 
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            
+
             startActivity(intent);
-            this.finish();
+            this.finish();*/
+            lostGame();
 
         }
     }
@@ -138,6 +141,27 @@ public class GameActivity extends Activity {
         this.finish();
 
     }
+
+    public void lostGame(){
+
+    new Handler().post(new Runnable() {
+        @Override
+        public void run() {
+
+            //Create an intent that will start the main activity.
+            Intent mainIntent = new Intent(GameActivity.this, LostActivity.class);
+            GameActivity.this.startActivity(mainIntent);
+
+            //Finish splash activity so user cant go back to it.
+            GameActivity.this.finish();
+
+            //Apply splash exit (fade out) and main entry (fade in) animation transitions.
+            overridePendingTransition(R.anim.mainfadein, R.anim.splashfadeout);
+        }
+    });
+
+    }
+
 
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
