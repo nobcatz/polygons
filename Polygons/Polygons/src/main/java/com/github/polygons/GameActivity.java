@@ -151,7 +151,11 @@ public class GameActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setPositiveButton(getResources().getString(R.string.accept), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // continue with delete
+                        Keeper.getInstance().lostGame();
+                        Intent intent = new Intent(GameActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+                        GameActivity.this.finish();
                     }
                 })
                 .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
