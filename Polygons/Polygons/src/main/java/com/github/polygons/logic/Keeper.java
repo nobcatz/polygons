@@ -34,7 +34,7 @@ public class Keeper {
         return figuresId.isEmpty();
     }
 
-    public void lostGame(){
+    public void reset(){
         instance = null;
     }
 
