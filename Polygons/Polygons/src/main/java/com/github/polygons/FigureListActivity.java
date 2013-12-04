@@ -26,6 +26,7 @@ public class FigureListActivity extends Activity {
 
     private boolean run = true;
     private int figNum = 0;
+    private int layNum = 0;
 
     private Handler handler = new Handler();
 
@@ -47,9 +48,13 @@ public class FigureListActivity extends Activity {
         public void run() {
                 /* do what you need to do */
             if (run) {
-                generateFigures("1", figNum + 1);
+                generateFigures(layNum + 1, figNum + 1);
                 figNum++;
-                run = figNum < 3;
+                if(figNum==3){
+                    layNum++;
+                    figNum=0;
+                    run = layNum < Keeper.getInstance().getLayoutNumber();
+                }
                 /* and here comes the "trick" */
                 handler.postDelayed(this, 500);
             } else {
@@ -68,7 +73,7 @@ public class FigureListActivity extends Activity {
         this.finish();
     }
 
-    public void generateFigures(String layoutNum, int figureNum) {
+    public void generateFigures(int layoutNum, int figureNum) {
         Resources res = getResources();
         int idfigure = res.getIdentifier("figure_" + layoutNum + "_" + figureNum, "id", getApplicationContext().getPackageName());
         int idLayout = res.getIdentifier("linear_layout_" + layoutNum, "id", getApplicationContext().getPackageName());
@@ -101,7 +106,7 @@ public class FigureListActivity extends Activity {
                 })
                 .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        handler.postDelayed(runnable,125);
+                        handler.postDelayed(runnable, 125);
                     }
                 });
         final FrameLayout frameView = new FrameLayout(this);
