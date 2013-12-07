@@ -82,9 +82,9 @@ public class Keeper {
             case 20:
                 this.layouts = 4;
                 break;
-            case 30:
-                this.layouts = 5;
-                break;
+ //           case 30:
+   //             this.layouts = 5;
+     //           break;
         }
     }
 }
