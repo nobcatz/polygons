@@ -1,10 +1,5 @@
 package com.github.polygons.logic;
 
-import android.content.Intent;
-
-import com.github.polygons.FigureListActivity;
-import com.github.polygons.GameActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
