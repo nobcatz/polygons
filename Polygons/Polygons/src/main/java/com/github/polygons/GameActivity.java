@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +41,6 @@ public class GameActivity extends Activity {
         Resources res = getResources();
         for (int i = 1; i < 16; i++) {
             if (!ids.contains(i)) {
-                Log.e("pitoPrueba", "NUUUUUUU" + i);
                 int idfigure = res.getIdentifier("view" + i, "id", getApplicationContext().getPackageName());
 
 
