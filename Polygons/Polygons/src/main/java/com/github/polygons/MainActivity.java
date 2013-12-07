@@ -22,8 +22,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         setContentView(R.layout.activity_main);
         initializeAudioManager();
 
-        findViewById(R.id.button_sign_in).setOnClickListener(this);
-        findViewById(R.id.button_sign_out).setOnClickListener(this);
+     //   findViewById(R.id.button_sign_in).setOnClickListener(this);
+       // findViewById(R.id.button_sign_out).setOnClickListener(this);
 
 
     }
@@ -63,18 +63,18 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     }
 
     private void showSignInButton() {
-        findViewById(R.id.button_sign_in).setVisibility(View.VISIBLE);
-        findViewById(R.id.button_sign_out).setVisibility(View.GONE);
+       // findViewById(R.id.button_sign_in).setVisibility(View.VISIBLE);
+       // findViewById(R.id.button_sign_out).setVisibility(View.GONE);
     }
 
     private void showSignOutButton() {
-        findViewById(R.id.button_sign_in).setVisibility(View.GONE);
-        findViewById(R.id.button_sign_out).setVisibility(View.VISIBLE);
+       // findViewById(R.id.button_sign_in).setVisibility(View.GONE);
+       // findViewById(R.id.button_sign_out).setVisibility(View.VISIBLE);
     }
 
     @Override
     public void onClick(View v) {
-
+/*
         switch (v.getId()) {
 
             case R.id.button_sign_in:
@@ -85,7 +85,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
                 signOut();
                 break;
 
-        }
+        } */
 
     }
 }
