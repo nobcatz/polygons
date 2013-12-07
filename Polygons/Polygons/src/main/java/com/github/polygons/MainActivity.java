@@ -2,7 +2,6 @@ package com.github.polygons;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.github.polygons.logic.CustomAudioManager;
@@ -61,7 +60,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     @Override
     public void onSignInSucceeded() {
         showSignOutButton();
-        Log.e("SIGN IN!!","WIIIIII");
     }
 
     private void showSignInButton() {
