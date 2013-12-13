@@ -1,65 +1,91 @@
 package com.github.polygons;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+import com.github.polygons.logic.CustomAudioManager;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.example.games.basegameutils.BaseGameActivity;
+import com.nobcatz.android.polygons.R;
+
+
+public class MainActivity extends BaseGameActivity implements View.OnClickListener{
+    private CustomAudioManager audioManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //noinspection MagicConstant
+        setRequestedOrientation(getResources().getInteger(R.integer.orientation));
         setContentView(R.layout.activity_main);
+        initializeAudioManager();
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
-    }
+     //   findViewById(R.id.button_sign_in).setOnClickListener(this);
+       // findViewById(R.id.button_sign_out).setOnClickListener(this);
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 
+
+    public void newGame(View v) {
+        Intent intent = new Intent(this, LevelActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
+
+    private void initializeAudioManager() {
+  //      audioManager = CustomAudioManager.getInstance(this, R.raw.background_sound);
+   //     audioManager.playBackgroundMusic();
+    }
+
+    @Override
+    public void onSignInFailed() {
+        showSignInButton();
+    }
+
+    @Override
+    public void onSignInSucceeded() {
+        showSignOutButton();
+    }
+
+    private void showSignInButton() {
+       // findViewById(R.id.button_sign_in).setVisibility(View.VISIBLE);
+       // findViewById(R.id.button_sign_out).setVisibility(View.GONE);
+    }
+
+    private void showSignOutButton() {
+       // findViewById(R.id.button_sign_in).setVisibility(View.GONE);
+       // findViewById(R.id.button_sign_out).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+/*
+        switch (v.getId()) {
+
+            case R.id.button_sign_in:
+                // user wants to sign in
+                beginUserInitiatedSignIn();
+                break;
+            case R.id.button_sign_out:
+                signOut();
+                break;
+
+        } */
+
+    }
 }

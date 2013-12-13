@@ -2,7 +2,13 @@
 <resources>
 
     <string name="app_name">Polygons</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="new_game">New game</string>
+    <string name="level">Level</string>
+
+    <string name="cancel">No</string>
+    <string name="accept">Yes</string>
+    <string name="sign_out">Sign out</string>
 
 </resources>
