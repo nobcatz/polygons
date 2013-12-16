@@ -1,2 +1,2 @@
-massive-hipster
+Polygons (a game of memory)
 ===============
